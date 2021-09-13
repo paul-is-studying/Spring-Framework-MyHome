@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+table, tr, td, th {
+	border: 1px black solid;
+	border-spacing: 0px;
+}
+
+.header {
+	border: 1px solid black;
+	width: 600px;
+	height: 40px;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 12px;
+}
+
+.footer {
+	border: 1px solid black;
+	width: 600px;
+	height: 40px;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 12px;
+}
+
+.main {
+	width: 600px;
+	min-height: 400px;
+	padding: 15px 5px;
+}
+
+.ckid {
+	float: left;
+}
+
+.table {
+	width: 450px;
+}
+
+.button {
+	width: 450px;
+	text-align: right;
+	padding-top: 15px;
+}
+
+/* 클릭하지 않은 링크 */
+a:link {
+	color: black;
+	text-decoration: none;
+}
+
+/* 한번이라도 클릭한 링크 */
+a:visited {
+	color: black;
+	text-decoration: none;
+}
+
+/* 커서가 위에 있을때. */
+a:hover {
+	color: blue;
+	font-weight: bold;
+	text-decoration: none;
+}
