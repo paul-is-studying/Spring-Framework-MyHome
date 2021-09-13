@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 		</div>
 		<div class="footer">
-			Copyright by Paul Kim.
+			KimMinJun's Work copyright。
 		</div>
 	</div>
 </body>
