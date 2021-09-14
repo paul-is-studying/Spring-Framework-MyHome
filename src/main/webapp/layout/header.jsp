@@ -17,7 +17,8 @@
 					<a href="/MyHome/login/logout.jsp">Logout</a> | 	
 				</c:when>
 				<c:otherwise>
-					<a href="/MyHome/login/login.jsp">Login</a> | Join | 
+					<a href="/MyHome/login/login.jsp">Login</a> | 
+					<a href="/MyHome/member/join.jsp">Join</a> | 
 				</c:otherwise>
 			</c:choose>
 			Board | 
