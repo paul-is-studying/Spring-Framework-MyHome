@@ -124,6 +124,35 @@ public class MemberDAO {
 		return check;
 	}
 	
+	public boolean updateMember(MemberDTO dto) {
+		String sql = "update member set email = ?,tel1 = ?,tel2 = ?,tel3 = ? where no = ?";
+		boolean check = false;
+		
+		try {
+			con = ds.getConnection();
+			ps = con.prepareStatement(sql);
+			ps.setString(1, dto.getEmail());
+			ps.setString(2, dto.getTel1());
+			ps.setString(3, dto.getTel2());
+			ps.setString(4, dto.getTel3());
+			ps.setInt(5, dto.getNo());
+			if(ps.executeUpdate() != 0) {
+				check = true;
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(ps != null) ps.close();
+				if(con != null) con.close();
+			}catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return check;
+	}
+	
 }
 
 

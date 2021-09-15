@@ -13,7 +13,7 @@
 		<div class="header">
 			<c:choose>
 				<c:when test="${login != null }">
-					MyHome | 
+					<a href="/MyHome/member/mypage.jsp">MyHome</a> | 
 					<a href="/MyHome/login/logout.jsp">Logout</a> | 	
 				</c:when>
 				<c:otherwise>

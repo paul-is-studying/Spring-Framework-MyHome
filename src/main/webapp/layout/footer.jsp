@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 		</div>
 		<div class="footer">
-			Copyright © Yujun (Paul) Kim
+			Copyright Yujun Kim
 		</div>
 	</div>
 </body>
