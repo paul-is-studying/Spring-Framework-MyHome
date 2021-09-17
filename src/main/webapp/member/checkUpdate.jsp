@@ -10,7 +10,7 @@
 	dto.setTel2(request.getParameter("tel2"));
 	dto.setTel3(request.getParameter("tel3"));
 	
-	boolean check = MemberDAO.getInstance().updateMember(MemberDTO);
+	boolean check = MemberDAO.getInstance().updateMember(dto);
 	
 	
 	out.write("<script>");

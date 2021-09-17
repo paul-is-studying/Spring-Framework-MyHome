@@ -153,6 +153,31 @@ public class MemberDAO {
 		return check;
 	}
 	
+	public boolean deleteMember(int no) {
+		String sql = "delete member where no = ?";
+		boolean check = false;
+		
+		try {
+			con = ds.getConnection();
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, no);
+			if(ps.executeUpdate() != 0) {
+				check = true;
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(ps != null) ps.close();
+				if(con != null) con.close();
+			}catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return check;
+		
+	}
 }
 
 

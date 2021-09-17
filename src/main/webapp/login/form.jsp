@@ -15,7 +15,7 @@
 </script>
 <%@include file="/layout/header.jsp"%>
 <div align="center">
-	<form action="/MyHome/login/check.jsp" method="post" name="input">
+	<form action="/MyHome/login/check.do" method="post" name="input">
 		<table style="background-color: lightblue;">
 			<tr>
 				<th style="background-color: lightblue;">ID</th>
