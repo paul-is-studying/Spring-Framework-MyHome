@@ -35,7 +35,7 @@
 	}
 </script>
 <%@include file = "/layout/header.jsp" %>
-<form action="/MyHome/member/checkJoin.jsp" method="post" name = "join"
+<form action="/MyHome/member/checkJoin.me" method="post" name = "join"
  	onsubmit="return checkJoin()">
 	<table>
 		<tr>

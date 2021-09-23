@@ -29,8 +29,8 @@
 	</table>
 	<div style="width: 250px; padding-top: 20px;">
 		<span style="float: right;">
-			<input type="button" value = "수정" onclick="location.href = '/MyHome/member/updateForm.jsp'">
-			<input type="button" value = "회원탈퇴" onclick="location.href = '/MyHome/member/deleteForm.jsp'">
+			<input type="button" value = "수정" onclick="location.href = '/MyHome/member/updateForm.me'">
+			<input type="button" value = "회원탈퇴" onclick="location.href = '/MyHome/member/deleteForm.me'">
 		</span>
 	</div>
 </div>

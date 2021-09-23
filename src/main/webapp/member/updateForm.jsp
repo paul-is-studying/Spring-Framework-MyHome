@@ -19,7 +19,7 @@
 </script>
 <%@include file = "/layout/header.jsp" %>
 <div align="center">
-	<form action="/MyHome/member/checkUpdate.jsp" method="post" name="update">
+	<form action="/MyHome/member/checkUpdate.me" method="post" name="update">
 		<table style="width: 300px;">
 			<tr>
 				<td>번호</td>

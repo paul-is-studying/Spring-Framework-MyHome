@@ -12,7 +12,6 @@ public class LogoutAction implements Action {
 		// TODO Auto-generated method stub
 		
 		request.getSession().invalidate();
-		
 	}
 
 }

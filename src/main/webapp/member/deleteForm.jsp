@@ -12,7 +12,7 @@
 </script>
 <%@include file="/layout/header.jsp" %>
 <div align="center">
-	<form action="/MyHome/member/checkDelete.jsp" method="post" name = "del">
+	<form action="/MyHome/member/checkDelete.me" method="post" name = "del">
 		<table>
 			<tr>
 				<th>${login.id }님의 비밀번호 확인</th>
