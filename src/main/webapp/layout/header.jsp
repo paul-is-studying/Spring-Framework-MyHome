@@ -21,7 +21,7 @@
 					<a href="/MyHome/member/join.me">Join</a> | 
 				</c:otherwise>
 			</c:choose>
-			Board | 
+			<a href="/MyHome/board/list.brd">Board</a> | 
 			<a href="/MyHome/">Home</a>
 		</div>
 		<div class="main">
