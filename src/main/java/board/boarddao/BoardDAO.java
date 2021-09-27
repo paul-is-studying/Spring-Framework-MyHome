@@ -13,6 +13,7 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 import board.boarddto.BoardDTO;
+import member.memberdao.MemberDAO;
 
 public class BoardDAO {
 
@@ -121,5 +122,37 @@ public class BoardDAO {
 			cut = id;
 		}
 		return cut;
+	}
+	
+	public boolean write(BoardDTO dto) {
+		boolean check = false;
+
+		String sql = "insert into board values(board_seq.nextval,?,?,?,?,?,0,sysdate)";
+
+		try {
+			con = ds.getConnection();
+			ps = con.prepareStatement(sql);
+			ps.setString(1, dto.getId());
+			ps.setString(2, MemberDAO.getInstance().getName(dto.getId()));
+			ps.setString(3, dto.getTitle());
+			ps.setString(4, dto.getContent());
+			ps.setString(5, dto.getFilename());
+			if (ps.executeUpdate() != 0) {
+				check = true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (ps != null)
+					ps.close();
+				if (con != null)
+					con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return check;
 	}
 }

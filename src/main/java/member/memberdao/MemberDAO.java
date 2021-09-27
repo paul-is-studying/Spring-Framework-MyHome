@@ -178,6 +178,37 @@ public class MemberDAO {
 		return check;
 		
 	}
+	
+	public String getName(String id) {
+
+		String name = null;
+
+		String sql = "select name from Member where id = ?";
+
+		try {
+			con = ds.getConnection();
+			ps = con.prepareStatement(sql);
+			ps.setString(1, id);
+			rs = ps.executeQuery();
+			if (rs.next()) {
+				name = rs.getString("name");
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null) rs.close();
+				if (ps != null) ps.close();
+				if (con != null) con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return name;
+
+	}
 }
 
 

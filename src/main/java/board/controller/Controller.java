@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import board.action.ListAction;
+import board.action.WriteAction;
 import util.Action;
 import util.ActionForward;
 
@@ -33,6 +34,13 @@ public class Controller extends HttpServlet {
 		case "list":
 			action = new ListAction();
 			actionForward = new ActionForward("/board/list.jsp", false);
+			break;
+		case "write":
+			actionForward = new ActionForward("/MyHome/board/write.jsp", true);
+			break;
+		case "checkWrite":
+			action = new WriteAction();
+			actionForward = new ActionForward("/board/result.jsp", false);
 			break;
 		}
 		
