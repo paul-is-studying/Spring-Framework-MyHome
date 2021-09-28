@@ -155,4 +155,71 @@ public class BoardDAO {
 
 		return check;
 	}
+	
+	public BoardDTO makeDTO(ResultSet rs){
+		BoardDTO dto = null;
+		try {
+			if(rs.next()) {
+				dto = new BoardDTO();
+				dto.setSeq(rs.getInt("seq"));
+				dto.setId(rs.getString("id"));
+				dto.setName(rs.getString("name"));
+				dto.setTitle(rs.getString("title"));
+				dto.setContent(rs.getString("content"));
+				dto.setFilename(rs.getString("filename"));
+				dto.setHit(rs.getInt("hit"));
+				dto.setLogtime(rs.getDate("logtime"));
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return dto;
+	}
+	
+	public BoardDTO getContent(int seq) {
+		BoardDTO dto = null;
+		
+		String sql = "select * from board where seq = ?";
+		
+		try {
+			con = ds.getConnection();
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, seq);
+			rs = ps.executeQuery();
+			dto = this.makeDTO(rs);
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(rs != null) rs.close();
+				if(ps != null) ps.close();
+				if(con != null) con.close();
+			}catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return dto;
+	}
+
+	public void readCount(int seq) {
+		String sql = "update board set hit = hit + 1 where seq = ?";
+		
+		try {
+			con = ds.getConnection();
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, seq);
+			ps.executeUpdate();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(ps != null) ps.close();
+				if(con != null) con.close();
+			}catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }

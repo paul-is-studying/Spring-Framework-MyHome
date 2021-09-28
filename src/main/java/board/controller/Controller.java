@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import board.action.ContentAction;
+import board.action.DownloadAction;
 import board.action.ListAction;
 import board.action.WriteAction;
 import util.Action;
@@ -41,6 +43,14 @@ public class Controller extends HttpServlet {
 		case "checkWrite":
 			action = new WriteAction();
 			actionForward = new ActionForward("/board/result.jsp", false);
+			break;
+		case "content":
+			action = new ContentAction();
+			actionForward = new ActionForward("/board/content.jsp", false);
+			break;
+		case "fileDownload":
+			action = new DownloadAction();
+			actionForward = new ActionForward("/board/content.brd", false);
 			break;
 		}
 		
