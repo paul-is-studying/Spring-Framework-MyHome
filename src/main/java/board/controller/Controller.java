@@ -8,9 +8,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import board.action.CheckUpdateAction;
 import board.action.ContentAction;
+import board.action.DeleteAction;
 import board.action.DownloadAction;
 import board.action.ListAction;
+import board.action.UpdateAction;
 import board.action.WriteAction;
 import util.Action;
 import util.ActionForward;
@@ -51,6 +54,18 @@ public class Controller extends HttpServlet {
 		case "fileDownload":
 			action = new DownloadAction();
 			actionForward = new ActionForward("/board/content.brd", false);
+			break;
+		case "delete":
+			action = new DeleteAction();
+			actionForward = new ActionForward("/board/result.jsp", false);
+			break;
+		case "update":
+			action = new UpdateAction();
+			actionForward = new ActionForward("/board/update.jsp", false);
+			break;
+		case "checkUpdate":
+			action = new CheckUpdateAction();
+			actionForward = new ActionForward("/board/result.jsp", false);
 			break;
 		}
 		

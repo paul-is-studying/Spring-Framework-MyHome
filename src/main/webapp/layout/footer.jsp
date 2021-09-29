@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 		</div>
 		<div class="footer">
-			Paul Kim.
+			Paul Kim。
 		</div>
 	</div>
 </body>

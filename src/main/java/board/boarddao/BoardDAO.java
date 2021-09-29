@@ -222,4 +222,70 @@ public class BoardDAO {
 			}
 		}
 	}
+
+	public boolean deleteContent(int seq) {
+		String sql = "delete board where seq = ?";
+		
+		boolean check = false;
+		
+		try {
+			con = ds.getConnection();
+			ps = con.prepareStatement(sql);
+			ps.setInt(1, seq);
+			if(ps.executeUpdate() != 0) {
+				check = true;
+			}
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(ps != null) ps.close();
+				if(con != null) con.close();
+			}catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return check;
+	}
+
+
+	public boolean updateContent(BoardDTO dto) {
+		String sql = "update board set title=?, content=? where seq=?";
+		boolean check = false;
+		try {
+			con = ds.getConnection();
+			ps = con.prepareStatement(sql);
+			ps.setString(1, dto.getTitle());
+			ps.setString(2, dto.getContent());
+			ps.setInt(3, dto.getSeq());
+			if(ps.executeUpdate() != 0) {
+				check = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (ps != null)
+					ps.close();
+				if (con != null)
+					con.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return check;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
